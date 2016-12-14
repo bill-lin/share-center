@@ -6,8 +6,8 @@ body {
 }
 
 h1 {
-   color: yellow;
-   margin-left: 20px;
+   color: blue;
+   text-align: center;
 }
 
 h2 {
@@ -27,30 +27,31 @@ h3 {
    right: 0px;
 }
 
-.carDetails {
-   position: absolute;
-   top: 28px;
-   left: 151px;
-   width: 250px;
-}
-
 
 .background {
    position: relative;
    width: 100%;
 }
 
-.storySummary {
+.storyTitle {
    color: black;
-   font-size: 12px;
-   font-weight: 300;
+   font-size: 24px;
+   font-weight: 400;
    font-family: sans-serif;
-   position: absolute;
-   right: 0px;
+   text-align: center;
 }
 
-.profileImage {
-   position: absolute;
-   top: 20px;
-   left: 20px;
+.storySummary {
+   color: black;
+   font-size: 24px;
+   font-weight: 300;
+   font-family: sans-serif;
+   text-align: center;
 }
+
+.storyThumb{
+display: block;
+    margin: auto;
+    width: 25%;
+}
+

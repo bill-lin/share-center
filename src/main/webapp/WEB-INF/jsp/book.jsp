@@ -7,6 +7,7 @@
 
 
 <head>
+<link href="<c:url value="/css/style.css" />" rel="stylesheet">
     <meta property="al:mobile:url" content=${appUrl}; />
     <meta property="al:mobile:app_name" content="Anitales" />
 
@@ -25,14 +26,18 @@
                   }
         </script>
    </head>
-
+<h1>${book.title}</h1>
    <body>
-    <div id="container" onclick="gotoApp()" class="background">
+    <div id="bookCovers" onclick="gotoApp()" >
        <c:forEach items="${bookCovers}" var="bookCover">
-               <img src="${bookCover}" />
+               <img src="${bookCover}" class="storyThumb"/>
        </c:forEach>
    </div>
-   <div id="container" onclick="gotoApp()" class="storySummary">
+  <div id="title" onclick="gotoApp()" class="storyTitle">
+        ${user.userName} created a story '${book.title}' in Anitales
+        <br/>
+  </div>
+   <div id="summary" onclick="gotoApp()" class="storySummary">
           ${book.summary}
    </div>
    </body>

@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-public class IndexController {
+public class ShareBookController {
     @Autowired
     private UserRepository userRepository;
 
@@ -43,9 +43,11 @@ public class IndexController {
             List<String> bookCovers = new ArrayList<>();
             bookCovers.add(String.format(bookThumbUrl, book.getThumbId()));
             model.put("bookCovers", bookCovers);
+            model.put("book", book);
+            model.put("user", user);
         }
 
-        return "index";
+        return "book";
     }
 
 
