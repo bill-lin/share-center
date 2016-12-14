@@ -34,6 +34,7 @@ public class IndexController {
                         Map<String, Object> model) {
         System.out.println("loading data ");
         User user = userRepository.findOne(userId);
+        Book book1 = bookRepository.findOne("W04xELgybD");
         Book book = bookRepository.findByGuid(bookGuid);
         model.put("user", user);
         model.put("book", book);

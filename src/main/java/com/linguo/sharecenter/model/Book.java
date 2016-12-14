@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 /**
  * Created by bin on 14/12/2016.
  */
-@Document(collection = "PublishedBook ")
+@Document(collection = "PublishedBook")
 public class Book {
     @Id
     @Field("_id")
