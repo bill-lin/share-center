@@ -8,6 +8,11 @@
 
 <head>
 <link href="<c:url value="/css/style.css" />" rel="stylesheet">
+<meta property="og:url" content=${appUrl} />
+<meta property="og:image" content="https://www.mathnuggets.com/images/fb-logo.jpg" />
+<meta property="og:title" content="${user.userName}'s story '${book.title}'" />
+<meta property="og:description" content="Challenging word problems for gifted elementary students" />`
+
     <meta property="al:mobile:url" content=${appUrl}; />
     <meta property="al:mobile:app_name" content="Anitales" />
 
