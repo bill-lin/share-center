@@ -6,11 +6,8 @@ import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
 import com.aliyuncs.push.model.v20160801.PushRequest;
 import com.aliyuncs.push.model.v20160801.PushResponse;
-import com.aliyuncs.utils.ParameterHelper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
 
 /**
  * Created by bin on 31/08/2017.
@@ -61,12 +58,12 @@ public class AliyunPushService {
         pushRequest.setBody(pushMessage.getMessageBody());
 
         // 推送控制
-        Date pushDate = new Date(System.currentTimeMillis()); // 30秒之间的时间点, 也可以设置成你指定固定时间
-        String pushTime = ParameterHelper.getISO8601Time(pushDate);
-        pushRequest.setPushTime(pushTime); // 延后推送。可选，如果不设置表示立即推送
-        String expireTime = ParameterHelper.getISO8601Time(new Date(System.currentTimeMillis() + 24 * 3600 * 1000)); // 1 days 后消息失效, 不会再发送
-        pushRequest.setExpireTime(expireTime);
-        pushRequest.setStoreOffline(true); // 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
+//        Date pushDate = new Date(System.currentTimeMillis()); // 30秒之间的时间点, 也可以设置成你指定固定时间
+//        String pushTime = ParameterHelper.getISO8601Time(pushDate);
+//        pushRequest.setPushTime(pushTime); // 延后推送。可选，如果不设置表示立即推送
+//        String expireTime = ParameterHelper.getISO8601Time(new Date(System.currentTimeMillis() + 24 * 3600 * 1000)); // 1 days 后消息失效, 不会再发送
+//        pushRequest.setExpireTime(expireTime);
+        pushRequest.setStoreOffline(false); // 离线消息是否保存,若保存, 在推送时候，用户即使不在线，下一次上线则会收到
 
 
         // 推送配置: Android
