@@ -28,12 +28,18 @@ public class AliyunPushService {
 
 
     public PushResponse pushMessage(PushMessage pushMessage) throws ClientException {
+        System.out.println("Reveived push request: "+ pushMessage);
         DefaultAcsClient client = createClient();
         // 推送目标
         PushRequest pushRequest = createRequest(pushMessage);
-        PushResponse pushResponse = client.getAcsResponse(pushRequest);
-        System.out.printf("RequestId: %s, MessageID: %s\n", pushResponse.getRequestId(), pushResponse.getMessageId());
-        return pushResponse;
+        try {
+            PushResponse pushResponse = client.getAcsResponse(pushRequest);
+            System.out.printf("RequestId: %s, MessageID: %s\n", pushResponse.getRequestId(), pushResponse.getMessageId());
+            return pushResponse;
+        }catch (Exception e){
+            e.printStackTrace();
+            throw new RuntimeException("Could not send push message due to "+ e.getMessage(), e);
+        }
 
     }
 

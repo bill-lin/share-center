@@ -60,4 +60,16 @@ public class PushMessage {
     public void setMessageBody(String messageBody) {
         this.messageBody = messageBody;
     }
+
+    @Override
+    public String toString() {
+        return "PushMessage{" +
+                "targetType='" + targetType + '\'' +
+                ", targetValue='" + targetValue + '\'' +
+                ", pushType='" + pushType + '\'' +
+                ", deviceType='" + deviceType + '\'' +
+                ", messageTitle='" + messageTitle + '\'' +
+                ", messageBody='" + messageBody + '\'' +
+                '}';
+    }
 }
